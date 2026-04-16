@@ -1,0 +1,186 @@
+// Array is of fixed size so to oversize this problem we have dynamic memory
+// allocation. We can allocate the memory as per our need. It is the process of
+// allocationg memory at the runtime (dusring program execution) rather than
+// compile time, allowing for flexible memory Management based on program needs.
+// It uses "Heap"Memory
+// Heap = Part of the operating system .
+
+// There are four functions Defined in <stdlib.h> header file
+
+malloc(size): Allocated a block of memoery of specified bytes and returns a void pointer to the first byte.*
+    apan sngu tevdhe blocks allocates the memroy byte by byte
+
+calloc(n, size): Allocates multiple block of memoery,each of the same size, and initializes them to zero.* block block madhe allocate 
+                 karto Ek baar mei hi multiple blocks allocates
+
+realloc(ptr, newsize): Resizes previously allocated memory to a new size.Extra add us blocks mei
+
+free(ptr): Deallocates or releases the memory block back to the heap to prevent memory leaks Basically acts as a delete function when 
+           the block is not in use
+
+// MALLOC
+#include <stdio.h>
+#include <stdlib.h>
+      int main() {
+  int *ptr;
+  int ct;
+  int sum = 0;
+
+  while (1) {
+    ptr = malloc(sizeof(int));
+    printf("Enter Your Number: ");
+    scanf("%d", ptr);
+
+    sum = sum + *ptr;
+    printf("\nValue is: %d", *ptr);
+
+    printf("\nDo you want to add next number in add press 1: ");
+    scanf("%d", &ct);
+
+    if (ct != 1) {
+      printf("\nThe sum of your Number is: %d", sum);
+      break;
+    }
+  }
+}
+
+// Allocate Memory for n numbers and print
+// Allocate memory for n numbers and count even and odd numbers
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+  int *ptr;
+  int ct;
+  int sum = 0;
+  int even = 0;
+  int odd = 0;
+  int oddnum = 0;
+  int evennum = 0;
+
+  while (1) {
+    ptr = malloc(sizeof(int));
+    printf("Enter Your Number: ");
+    scanf("%d", ptr);
+
+    printf("\nValue is: %d", *ptr);
+
+    if (*ptr % 2 == 0) {
+      even++;
+      evennum = evennum + *ptr; // Sum of Odd And Even Seperately
+    } else {
+      odd++;
+      oddnum = oddnum + *ptr; // Sum of Odd And Even Seperately
+    }
+
+    printf("\nDo you want to add next number in add press 1: ");
+    scanf("%d", &ct);
+
+    if (ct != 1) {
+      printf("\nThe Even Numbers from the followings are: %d", even);
+      printf("\nThe Odd Numbers from the followings are: %d", odd);
+      printf("\nThe Sum of Even Numbers from the followings are: %d", evennum);
+      printf("\nThe Sum of Odd Numbers from the followings are: %d", oddnum);
+      
+      break;
+    }
+  }
+}
+
+// ------------------------------------------------------------------------------------------------------------
+//                              P        R       E      V     I        O       U
+//                              S
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+
+  int *ptr;
+  int ct;
+
+  ptr = malloc(sizeof(int *));
+
+  printf("Enter any Number: ");
+  scanf("%d", ptr);
+
+  printf("Value is: %d", *ptr);
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+
+  int *ptr;
+  int ct = 1;
+  int sum = 0;
+
+  while (ct) {
+    ptr = malloc(sizeof(int *));
+
+    printf("Enter any Number: ");
+    scanf("%d", ptr);
+
+    sum += *ptr;
+
+    printf("Value is: %d", *ptr);
+    printf("Do you want to continue(Press 1) and to stop press 0: ");
+    scanf("%d", &ct);
+
+    printf("THe sum of the numbers is: %d", sum);
+  }
+}
+
+// CALLOC
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+  int *ptr;
+  int i;
+  int n = 5;
+
+  ptr = (int *)calloc(n, sizeof(int));
+
+  printf("\nEnter elements in Array: ");
+  for (i = 0; i < n; i--) {
+    scanf("%d", ptr + i);
+  }
+}
+
+// ------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+  int *ptr;
+  int ct = 0;
+  int i;
+
+  ptr = calloc(10, sizeof(int));
+  for (i = 0; i < 10; i++) {
+    printf("Enter any number: ");
+    scanf("%d", ptr + i);
+  }
+
+  printf("\n----------------------------");
+  for (i = 0; i < 10; i++) {
+    printf("\n%d", *(ptr + i));
+  }
+  return 0;
+}
+
+// Stack  -  array  |  linkedlist
+// Queue  -  array  |  linkedlist
+// Tree   -  array  |  linkedlist
+// Graph  -  array  |  linkedlist
+
+// These DataStructures are important  = Array & Linkedlist
+
+// Integers take 4 bytes memory
+//  Use array when you need a fix data - Static Data Structuree
+
+// lINKEDLIST
+// When the data is not fixed -- Dynamic data structure
+
+What is DataStructures Difference between static and dynamic What is greddy
+    approach adn greedy conquer approach What is BigO notation What is time
+        space complexity Different types of Data struuctures What
+            is algorithm &psudo code Divide and conquer approach
