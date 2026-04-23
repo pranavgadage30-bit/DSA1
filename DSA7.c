@@ -1,3 +1,4 @@
+//HEAP SORT
 #include <stdio.h>
 
 void heapify(int arr[], int n, int i) {
